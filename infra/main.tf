@@ -46,3 +46,15 @@ resource "aws_dynamodb_table" "items" {
         env = "poc"
     }
 }
+
+resource "aws_secretsmanager_secret" "app" {
+    name = var.secret_name
+    description = "App config for ${var.app_name}"
+}
+
+resource "aws_secretsmanager_secret_version" "app_v1" {
+    secret_id = aws_secretsmanager_secret.app.id
+    secret_string = jsonencode({
+        TABLE_NAME = var.ddb_table
+    })
+}
