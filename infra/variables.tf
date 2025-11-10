@@ -5,3 +5,4 @@ variable "ddb_table" {
   default = "Poc1Items"
 }
 variable "secret_name" { default = "/poc1/app" }
+variable "image_uri" {type = string }

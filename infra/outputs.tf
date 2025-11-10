@@ -22,9 +22,17 @@ output "exec_role_arn" {
   value = aws_iam_role.exec.arn
 
 }
+
 output "task_role_arn" {
   value = aws_iam_role.task.arn
 }
+
 output "log_group_name" {
   value = aws_cloudwatch_log_group.api.name
 }
+
+output "ecs_cluster_name" { value = aws_ecs_cluster.poc_cluster.name }
+
+output "task_definition_arn" { value = aws_ecs_task_definition.api.arn }
+
+
