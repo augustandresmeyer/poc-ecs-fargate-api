@@ -31,8 +31,23 @@ output "log_group_name" {
   value = aws_cloudwatch_log_group.api.name
 }
 
-output "ecs_cluster_name" { value = aws_ecs_cluster.poc_cluster.name }
+output "ecs_cluster_name" { 
+    value = aws_ecs_cluster.poc_cluster.name 
+}
 
-output "task_definition_arn" { value = aws_ecs_task_definition.api.arn }
+output "task_definition_arn" { 
+    value = aws_ecs_task_definition.api.arn 
+}
 
+output "vpc_id" {
+    value = aws_vpc.ecs_poc_vpc.id 
+}
+
+output "public_subnets" {
+    value = [for s in aws_subnet.public : s.id]
+}
+
+output "private_subnets" {
+    value = [for s in aws_subnet.private : s.id]
+}
 
