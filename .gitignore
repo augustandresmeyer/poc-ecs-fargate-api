@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Python (app/)
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# Docker
+*.tar
+
+# Terraform (infra/)
+infra/.terraform/
+infra/.terraform.lock.hcl
+infra/terraform.tfstate
+infra/terraform.tfstate.*
+infra/crash.log
+infra/override.tf
+infra/override.tf.json
+infra/*.tfvars
+infra/*.tfvars.json
+
+# Logs
+*.log
+

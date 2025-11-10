@@ -1,0 +1,4 @@
+fastapi
+unicorn[standard]
+boto3
+pyjwt
